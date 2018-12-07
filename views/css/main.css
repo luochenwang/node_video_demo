@@ -1,0 +1,151 @@
+*{
+    margin:0;
+    padding:0;
+    box-sizing: border-box;
+}
+.clearfix:after {
+    content: ".";
+    display: block;
+    height: 0;
+    clear: both;
+    visibility: hidden;
+}
+img{
+    width:100%;
+    vertical-align: top;
+}
+a{
+    text-decoration: none;
+}
+li{
+    list-style:none;
+}
+.warp{
+    padding:20px;
+}
+.pro-list li{
+    float:left;
+    width:30%;
+    margin-right:5%;
+    margin-bottom:20px;
+    border:1px solid #000;
+    position: relative;
+}
+.pro-list li .edit{
+    position: absolute;
+    top:0;
+    right:0;
+    width:50px;
+    line-height:30px;
+    color:#fff;
+    background:#2f80e7;
+    text-align: center;
+    font-size:14px;
+}
+.pro-list li .delect{
+    position: absolute;
+    top:0;
+    left:0;
+    width:50px;
+    line-height:30px;
+    color:#fff;
+    background:#2f80e7;
+    text-align: center;
+    font-size:14px;
+}
+.pro-list li .info{
+    padding:15px;
+    border-top:1px solid #000;
+}
+.pro-list li .info h3{
+    font-size:18px;
+    color:#000;
+}
+.pro-list li .info .desc{
+    font-size:14px;
+    overflow:hidden;
+    text-overflow:ellipsis;
+    display:-webkit-box;
+    -webkit-box-orient:vertical;
+    -webkit-line-clamp:2;
+    color:#b0b3b7;
+    margin:10px 0;
+}
+.pro-list li .info .other{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    font-size:18px;
+    color:#000;
+}
+.pro-list li:nth-child(3n+3){
+    margin-right:0;
+}
+
+
+
+.play-box .video-box{
+    float:left;
+    width:48%;
+}
+.play-box .info{
+    float:right;
+    width:48%;
+}
+.play-box .info h3{
+    font-size:20px;
+    color:#000;
+}
+.play-box .info .desc{
+    font-size:18px;
+    margin-bottom:15px;
+}
+.play-box .info .author{
+    font-size:16px;
+    color:#b0b3b7;
+    margin-bottom:15px;
+}
+
+
+.details-box{
+    width:80%;
+    margin:0 auto;
+}
+.details-box .form-group{
+    margin-bottom:20px;
+}
+.details-box .form-group label{
+    width:10%;
+    float: left;
+    font-size:16px;
+    vertical-align: top;
+}
+.details-box .form-group input,.details-box .form-group textarea{
+    width:85%;
+    font-size:16px;
+    float: right;
+    padding:10px;
+    border:1px solid #000;
+}
+.details-box .form-group textarea{
+    height:200px;
+}
+.submit{
+    line-height:40px;
+    background:#23b7e5;
+    color:#fff;
+    font-size:14px;
+    text-align: center;
+}
+
+
+.to-add{
+    line-height:40px;
+    background:#23b7e5;
+    color:#fff;
+    font-size:14px;
+    text-align: center;
+    display: block;
+}
+
+

@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=Edge,Chrome=1" />
+    <meta name="format-detection" content="telphone=no" />
+    <meta name="format-detection" content="email=no" />
+    <meta http-equiv="Expires" content="0" />
+    <meta http-equiv="Pragma" content="no-cache" />
+    <meta http-equiv="Cache-control" content="no-cache" />
+    <meta http-equiv="Cache" content="no-cache" />
+    <title></title>
+    <link rel="stylesheet" type="text/css" href="../css/main.css">
+</head>
+<body>
+    <div class="pro-list warp">
+        <ul class="clearfix">
+            <% for(var i=0;i<list.length;i++){%>
+                <li>
+                    <a href="/play/<%=list[i].id%>">
+                        <img src="../img/cover.jpg" class="cover">
+                        <div class="info">
+                            <h3><%= list[i].name %></h3>
+                            <p class="desc"><%= list[i].info %></p>
+                            <div class="other">
+                                <p class="author"><%= list[i].author %></p>
+                                <p class="time"><%= list[i].time %></p>
+                            </div>
+                        </div>
+                    </a>
+                    <a href="/details/<%=list[i].id%>" class="edit">编辑</a>
+                    <div class="delect" data-id="<%= list[i].id %>">删除</div>
+                </li>
+            <%}%>
+        </ul>
+
+        <% if(list.length == 0){ %>
+            <a href="/details/0" class="to-add">添加</a>
+        <%}%>
+    </div>
+
+
+    <script type="text/javascript" src="http://code.jquery.com/jquery-1.9.1.min.js"></script>
+    <script type="text/javascript">
+        $(".delect").on("click",function(){
+            var id = $(this).data("id");
+            var check = confirm("你确定删除吗？");
+            if(check){
+                var that = $(this);
+                $.ajax({
+                    url:'/delectVideo',
+                    type:'post',
+                    data:{
+                        id:id
+                    },
+                    success:function(res){
+                        if(res.code == 0){
+                            that.parents("li").remove();
+                        }
+
+                        alert(res.msg)
+                    }
+                })
+            }
+        })
+    </script>
+</body>
+</html>
